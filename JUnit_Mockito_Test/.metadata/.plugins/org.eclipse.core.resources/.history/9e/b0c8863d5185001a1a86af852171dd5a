@@ -1,0 +1,37 @@
+package com.bagic.Channelservices.dto;
+
+public class Policy {
+	
+	private int QuoteId;
+	
+	private String policyName;
+	
+	private Proposer p;
+
+	public int getQuoteId() {
+		return QuoteId;
+	}
+
+	public void setQuoteId(int quoteId) {
+		QuoteId = quoteId;
+	}
+
+	public String getPolicyName() {
+		return policyName;
+	}
+
+	public void setPolicyName(String policyName) {
+		this.policyName = policyName;
+	}
+
+	public Proposer getP() {
+		return p;
+	}
+
+	public void setP(Proposer p) {
+		this.p = p;
+	}
+	
+	
+
+}

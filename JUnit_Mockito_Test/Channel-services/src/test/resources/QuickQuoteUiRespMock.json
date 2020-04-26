@@ -1,0 +1,10 @@
+{
+    "prop": {
+        "id": "AGMockId902",
+        "name": "Mocked-BL_updated"
+    },
+    "q": {
+        "policyName": "Mocked-policy",
+        "quoteId": "MockedQuote902"
+    }
+}

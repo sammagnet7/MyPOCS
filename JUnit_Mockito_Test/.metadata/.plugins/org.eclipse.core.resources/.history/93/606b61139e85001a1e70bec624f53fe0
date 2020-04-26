@@ -1,0 +1,8 @@
+package com.bagic.Channelservices;
+
+public class Number {
+
+	private int a;
+	
+	
+}

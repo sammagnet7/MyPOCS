@@ -1,0 +1,36 @@
+package com.bagic.Channelservices.bl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.bagic.Channelservices.domain.PolicyDO;
+import com.bagic.Channelservices.domain.ProposerDO;
+import com.bagic.Channelservices.domain.TravelDomain;
+import com.bagic.Channelservices.dto.Proposer;
+import com.bagic.Channelservices.reqRespModel.QuikQuoteUiReq;
+
+@Component
+public class TravelBL {
+	
+	@Autowired
+	PolicyDO polDO;;
+	
+	@Autowired
+	ProposerDO propDO;
+	
+	public int quickquote(QuikQuoteUiReq q) {
+		this.reqToDomainConvertion(q);
+		propDO.quickQuote();
+		
+		
+	}
+	
+	private void reqToDomainConvertion(QuikQuoteUiReq q) {
+		propDO.setId(q.getProp().getId());
+		propDO.setName(q.getProp().getName());
+		
+	}
+	
+	
+
+}

@@ -1,0 +1,23 @@
+package com.bagic.Channelservices.infrastructure;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.bagic.Channelservices.domain.TravelDomain;
+import com.bagic.Channelservices.dto.TravelDTO;
+
+@Component
+public class TravelServiceImpl implements TravelService{
+	
+	@Autowired
+	TravelDomain tdo;
+
+	@Override
+	public int TravelServiceMethod1() {
+		return 5;
+	}
+
+
+
+
+}

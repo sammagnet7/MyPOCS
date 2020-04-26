@@ -1,0 +1,21 @@
+package com.bagic.Channelservices.infrastructure;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.bagic.Channelservices.domain.TravelDomain;
+
+public class TravelInfrastructureImpl implements TravelInfastructure {
+
+	@Autowired
+	TravelService tsrv;
+	
+	@Autowired
+	TravelDomain tdo;
+	
+	@Override
+	public void InfraTravelMethod1() {
+		int variable = tsrv.travelRestMethodCall();
+		tdo.setNumber(variable);
+	}
+
+}

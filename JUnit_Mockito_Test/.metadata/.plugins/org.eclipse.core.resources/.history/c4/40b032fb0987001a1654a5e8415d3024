@@ -1,0 +1,35 @@
+package com.bagic.Channelservices.reqRespModel;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+public class QuikQuoteUiReq {
+	
+	@Autowired
+	Proposer prop;
+
+	public QuikQuoteUiReq() {
+		super();
+	}
+
+	@Autowired
+	public QuikQuoteUiReq(Proposer prop) {
+		super();
+		this.prop = prop;
+	}
+
+	public Proposer getProp() {
+		return prop;
+	}
+
+//	@Autowired
+	public void setProp(Proposer prop) {
+		this.prop = prop;
+	}
+	
+	
+
+}

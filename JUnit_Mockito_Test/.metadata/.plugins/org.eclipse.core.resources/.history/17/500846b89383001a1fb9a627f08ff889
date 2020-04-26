@@ -1,0 +1,6 @@
+package com.bagic.Channelservices.dto;
+
+public class TravelDTO {
+
+	public int number;
+}

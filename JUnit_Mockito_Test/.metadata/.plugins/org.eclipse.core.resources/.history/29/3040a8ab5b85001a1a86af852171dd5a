@@ -1,0 +1,5 @@
+package com.bagic.Channelservices.domain;
+
+public class ProposerDO {
+
+}

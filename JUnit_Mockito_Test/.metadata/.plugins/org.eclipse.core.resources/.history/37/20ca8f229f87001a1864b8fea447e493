@@ -1,0 +1,12 @@
+package com.bagic.Channelservices;
+
+import org.junit.jupiter.api.Test;
+
+class ChannelServicesApplicationTest {
+
+	@Test
+	void testMain() {
+		ChannelServicesApplication.main(new String[] {});
+	}
+
+}

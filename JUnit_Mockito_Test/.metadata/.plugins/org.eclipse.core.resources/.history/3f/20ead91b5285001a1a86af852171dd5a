@@ -1,0 +1,18 @@
+package com.bagic.Channelservices.bl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.bagic.Channelservices.domain.TravelDomain;
+
+@Component
+public class TravelBL {
+	
+	@Autowired
+	TravelDomain tdo;
+	
+	public int BLTravelmethod1() {
+		return tdo.getNumber();
+	}
+
+}

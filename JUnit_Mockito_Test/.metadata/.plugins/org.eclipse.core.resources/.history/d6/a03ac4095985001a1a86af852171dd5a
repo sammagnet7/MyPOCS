@@ -1,0 +1,22 @@
+package com.bagic.Channelservices.reqRespModel;
+
+import org.springframework.stereotype.Component;
+
+import com.bagic.Channelservices.domain.ProposerDO;
+
+@Component
+public class QuikQuoteUiReq {
+	
+	Proposer prop;
+
+	public Proposer getProp() {
+		return prop;
+	}
+
+	public void setProp(Proposer prop) {
+		this.prop = prop;
+	}
+	
+	
+
+}

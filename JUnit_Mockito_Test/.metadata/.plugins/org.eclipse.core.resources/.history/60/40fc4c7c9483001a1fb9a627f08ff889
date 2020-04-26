@@ -1,0 +1,13 @@
+package com.bagic.Channelservices.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class TravelController {
+	
+	public int method1(int a, int b) {
+		return a+b;
+	}
+	
+
+}

@@ -1,0 +1,25 @@
+package com.bagic.Channelservices.infrastructure;
+
+import static org.mockito.Mockito.verify;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.bagic.Channelservices.extReqRespModel.QuickQuoteExtReq;
+
+class TravelServiceTest {
+	
+	@Autowired
+	TravelService tsrv;
+
+	@Test
+	void testTravelRestMethodCall() {
+		
+		QuickQuoteExtReq q =new QuickQuoteExtReq();
+		
+		tsrv.travelRestMethodCall(q);
+		
+		verify(mock)
+	}
+
+}

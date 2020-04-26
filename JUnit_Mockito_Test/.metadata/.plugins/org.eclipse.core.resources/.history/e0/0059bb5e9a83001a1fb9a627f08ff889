@@ -1,0 +1,15 @@
+package com.bagic.Channelservices.infrastructure;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class TravelInfrastructureImpl implements TravelInfastructure {
+
+	@Autowired
+	TravelService tsrv;
+	
+	@Override
+	public void InfraTravelMethod1() {
+		
+	}
+
+}

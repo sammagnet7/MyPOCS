@@ -1,0 +1,17 @@
+package com.bagic.Channelservices.dto;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class TravelDTO {
+
+	private int number;
+	
+	public int getNumber() {
+		return this.number;
+	}
+	
+	public void setNumber(int integer) {
+		this.number = integer;
+	}
+}

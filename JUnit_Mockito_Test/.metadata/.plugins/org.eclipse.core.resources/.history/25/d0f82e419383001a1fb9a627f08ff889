@@ -1,0 +1,13 @@
+package com.bagic.Channelservices.infrastructure;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class TravelServiceImpl implements TravelService{
+
+	@Override
+	public int ServiceMethod() {
+		return 0;
+	}
+
+}

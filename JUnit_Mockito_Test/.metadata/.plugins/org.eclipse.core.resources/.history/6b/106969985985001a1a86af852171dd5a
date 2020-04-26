@@ -1,0 +1,5 @@
+package com.bagic.Channelservices.extReqRespModel;
+
+public class QuickQuoteExtResp {
+
+}

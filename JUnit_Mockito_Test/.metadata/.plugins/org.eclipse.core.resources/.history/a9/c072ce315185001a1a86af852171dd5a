@@ -1,0 +1,11 @@
+package com.bagic.Channelservices.dto;
+
+public class Policy {
+	
+	private int QuoteId;
+	
+	private String policyName;
+	
+	private Proposer p;
+
+}

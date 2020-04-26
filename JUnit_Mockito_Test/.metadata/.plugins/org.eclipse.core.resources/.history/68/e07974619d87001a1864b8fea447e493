@@ -1,0 +1,24 @@
+package com.bagic.Channelservices.infrastructure;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.bagic.Channelservices.extReqRespModel.QuickQuoteExtReq;
+import com.bagic.Channelservices.extReqRespModel.QuickQuoteExtResp;
+
+class TravelServiceTest {
+	
+	@Autowired
+	TravelService tsrv;
+
+	@Test
+	void testTravelRestMethodCall() {
+		
+		QuickQuoteExtReq q =new QuickQuoteExtReq();
+		
+		QuickQuoteExtResp resp = tsrv.travelRestMethodCall(q);
+		
+		AssertTh
+	}
+
+}

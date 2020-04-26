@@ -1,0 +1,14 @@
+package com.bagic.Channelservices.domain;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TravelDomainTest {
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}

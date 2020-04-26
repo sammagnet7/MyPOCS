@@ -1,0 +1,17 @@
+package com.bagic.Channelservices.infrastructure;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class TravelServiceImpl implements TravelService{
+
+	@Override
+	public int TravelServiceMethod1() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+
+}

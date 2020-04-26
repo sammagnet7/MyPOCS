@@ -1,0 +1,19 @@
+package com.bagic.Channelservices.infrastructure;
+
+import org.springframework.stereotype.Component;
+
+import com.bagic.Channelservices.dto.Policy;
+import com.bagic.Channelservices.dto.Proposer;
+
+@Component
+public class TravelService {
+	
+	public int travelRestMethodCall(Proposer p) {
+		
+		Proposer a=new Proposer();
+		Policy b= new Policy("Q101", "Health", a);
+		
+		return b;
+	}
+
+}

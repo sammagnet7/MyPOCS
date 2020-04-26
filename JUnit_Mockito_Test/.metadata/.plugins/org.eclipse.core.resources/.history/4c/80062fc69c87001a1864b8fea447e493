@@ -1,0 +1,17 @@
+package com.bagic.Channelservices.infrastructure;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+
+class TravelServiceTest {
+	
+	@InjectMocks
+	TravelService tsrv;
+
+	@Test
+	void testTravelRestMethodCall() {
+	}
+
+}

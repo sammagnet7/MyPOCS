@@ -1,0 +1,10 @@
+{
+    "prop": {
+        "id": "AGMockId902",
+        "name": "BAGIC"
+    },
+    "q": {
+        "policyName": "HEALTH",
+        "quoteId": "98765"
+    }
+}

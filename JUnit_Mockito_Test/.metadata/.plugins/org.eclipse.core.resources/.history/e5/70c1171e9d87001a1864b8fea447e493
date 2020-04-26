@@ -1,0 +1,21 @@
+package com.bagic.Channelservices.infrastructure;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+
+import com.bagic.Channelservices.extReqRespModel.QuickQuoteExtReq;
+
+class TravelServiceTest {
+	
+	@InjectMocks
+	TravelService tsrv;
+
+	@Test
+	void testTravelRestMethodCall() {
+		
+		QuickQuoteExtReq q =new QuickQuoteExtReq();
+		
+		tsrv.travelRestMethodCall(q);
+	}
+
+}

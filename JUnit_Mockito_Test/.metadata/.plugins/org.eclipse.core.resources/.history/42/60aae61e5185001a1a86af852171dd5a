@@ -1,0 +1,5 @@
+package com.bagic.Channelservices.dto;
+
+public class Policy {
+
+}
