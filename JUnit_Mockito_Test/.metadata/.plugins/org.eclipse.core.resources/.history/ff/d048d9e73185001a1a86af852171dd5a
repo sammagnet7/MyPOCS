@@ -1,9 +1,0 @@
-package com.bagic.Channelservices.dto;
-
-public class Proposer {
-	
-	private int id;
-	private String name;
-	
-
-}

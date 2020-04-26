@@ -1,5 +1,0 @@
-package com.bagic.Channelservices.infrastructure;
-
-public interface TravelInfastructure {
-
-}

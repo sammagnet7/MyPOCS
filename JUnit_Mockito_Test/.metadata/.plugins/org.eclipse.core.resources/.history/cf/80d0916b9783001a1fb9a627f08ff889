@@ -1,6 +1,0 @@
-package com.bagic.Channelservices.infrastructure;
-
-public interface TravelService {
-
-	int ServiceMethod();
-}

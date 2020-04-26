@@ -1,9 +1,0 @@
-package com.bagic.Channelservices.infrastructure;
-
-import com.bagic.Channelservices.dto.Proposer;
-
-public interface TravelInfastructure {
-
-	void quickQuote();
-
-}
