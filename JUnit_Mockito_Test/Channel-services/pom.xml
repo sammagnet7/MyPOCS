@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.13.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/> 
 	</parent>
 	<groupId>com.bagic</groupId>
 	<artifactId>Channel-services</artifactId>
@@ -17,6 +17,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<junit-jupiter.version>5.5.2</junit-jupiter.version>
+		<jcoco-exclusion.pattern>com.bagic.Channelservices</jcoco-exclusion.pattern>
 	</properties>
 
 	<dependencies>
@@ -58,8 +59,12 @@
     		<artifactId>spring-boot-devtools</artifactId>
     		<version>2.1.13.RELEASE</version>
 		</dependency>
-
-		
+		<dependency>
+    		<groupId>org.projectlombok</groupId>
+    		<artifactId>lombok</artifactId>
+    		<version>1.18.8</version>
+    		<scope>provided</scope>
+		</dependency>
 	
 	</dependencies>
 
@@ -73,6 +78,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
             </plugin>
+            
             <plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
@@ -85,12 +91,39 @@
 					</execution>
 					<execution>
 						<id>report</id>
-						<!-- attached to Maven test phase -->
 						<!-- <phase>test</phase> -->
 						<goals>
 							<goal>report</goal>
 						</goals>
 					</execution>
+					<execution>
+            			<id>default-check</id>
+            			<goals>
+                			<goal>check</goal>
+            			</goals>
+            			<configuration>
+                			<rules>
+                    			<rule implementation="org.jacoco.maven.RuleConfiguration">
+                        			<excludes>
+                        				 <exclude>${jcoco-exclusion.pattern}</exclude>
+                        				 <exclude>com.bagic.Channelservices.legacy.controller</exclude>
+                        			</excludes>
+                        			<element>PACKAGE</element>
+                        			<!-- <element>CLASS</element> -->
+                        			<limits>
+                            			<limit implementation="org.jacoco.report.check.Limit">
+                                			<counter>LINE</counter>
+                                			<!-- <counter>COMPLEXITY</counter> -->
+                                			<!-- <counter>CLASS</counter> -->
+                                			<value>COVEREDRATIO</value>
+                                			<!-- <value>MISSEDCOUNT</value> -->
+                                			<minimum>0.85</minimum>
+                            			</limit>
+                        			</limits>
+                    			</rule>
+                			</rules>
+            			</configuration>
+        			</execution>
 				</executions>
 			</plugin>
         </plugins>
