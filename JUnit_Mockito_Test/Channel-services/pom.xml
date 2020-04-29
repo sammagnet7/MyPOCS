@@ -17,7 +17,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<junit-jupiter.version>5.5.2</junit-jupiter.version>
-		<jcoco-exclusion.pattern>com.bagic.Channelservices</jcoco-exclusion.pattern>
+		<jcoco-exclusion.pattern>com.bagic.Channelservices.legacy.controller.**</jcoco-exclusion.pattern>
 	</properties>
 
 	<dependencies>
@@ -83,6 +83,7 @@
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.2</version>
+				
 				<executions>
 					<execution>
 						<goals>
@@ -105,11 +106,12 @@
                 			<rules>
                     			<rule implementation="org.jacoco.maven.RuleConfiguration">
                         			<excludes>
-                        				 <exclude>${jcoco-exclusion.pattern}</exclude>
-                        				 <exclude>com.bagic.Channelservices.legacy.controller</exclude>
+                        				<!-- <exclude>**/*com.bagic.Channelservices.ExcludedLegacyClass.class</exclude> -->
+                        				<exclude>com.bagic.Channelservices.ExcludedLegacyClass</exclude>
+                        				<exclude>${jcoco-exclusion.pattern}</exclude>
                         			</excludes>
-                        			<element>PACKAGE</element>
-                        			<!-- <element>CLASS</element> -->
+                        			<!-- <element>PACKAGE</element> -->
+                        			<element>CLASS</element>
                         			<limits>
                             			<limit implementation="org.jacoco.report.check.Limit">
                                 			<counter>LINE</counter>
@@ -124,6 +126,7 @@
                 			</rules>
             			</configuration>
         			</execution>
+
 				</executions>
 			</plugin>
         </plugins>
