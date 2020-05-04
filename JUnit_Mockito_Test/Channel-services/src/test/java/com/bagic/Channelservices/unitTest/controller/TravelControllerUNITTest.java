@@ -35,7 +35,6 @@ class TravelControllerUNITTest {
 		String s= tc.demoMethod("Unit testing");
 		//then
 		assertEquals(s, "Mocked");
-		//assertEquals(s, "Hi Unit testing");
 	}
 
 }
