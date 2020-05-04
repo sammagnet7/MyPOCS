@@ -29,9 +29,7 @@ public class TravelBL {
 		if(resp.getProp().getName().equalsIgnoreCase("Mocked")) {
 			resp.getProp().setName("Mocked-BL_updated");
 		}
-		return resp;
-		
-			
+		return resp;	
 	}
 	
 	private void UiReqConvertion(QuikQuoteUiReq q) {
@@ -45,7 +43,9 @@ public class TravelBL {
 		resp.getQ().setQuoteId(polDO.getQuoteId());
 		resp.getQ().setPolicyName(polDO.getPolicyName());
 	}
-	
-	
+
+	public String demoMethod(String demo) {
+		return "Hi "+demo;
+	}
 
 }

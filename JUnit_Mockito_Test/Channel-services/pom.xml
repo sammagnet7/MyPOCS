@@ -119,7 +119,7 @@
                                 			<!-- <counter>CLASS</counter> -->
                                 			<value>COVEREDRATIO</value>
                                 			<!-- <value>MISSEDCOUNT</value> -->
-                                			<minimum>0.85</minimum>
+                                			<minimum>0.80</minimum>
                             			</limit>
                         			</limits>
                     			</rule>

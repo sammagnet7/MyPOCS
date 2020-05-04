@@ -23,6 +23,9 @@ public class TravelController {
 	public QuickQuoteUiResp quickQuote(@RequestBody QuikQuoteUiReq q) {
 		return tbl.quickquote(q);
 	}
-	
+
+	public String demoMethod(String demo) {
+		return tbl.demoMethod(demo) ;
+	}
 
 }
