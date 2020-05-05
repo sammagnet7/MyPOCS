@@ -14,7 +14,7 @@ import com.bagic.Channelservices.reqRespModel.Quote;
 public class TravelBL {
 	
 	@Autowired
-	PolicyDO polDO;;
+	PolicyDO polDO;
 	
 	@Autowired
 	ProposerDO propDO;

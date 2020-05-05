@@ -17,7 +17,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<junit-jupiter.version>5.5.2</junit-jupiter.version>
-		<jcoco-exclusion.pattern>com.bagic.Channelservices.legacy.controller.**</jcoco-exclusion.pattern>
+		<jcoco-exclusion.pattern>com/bagic/Channelservices/legacy/controller/**/*</jcoco-exclusion.pattern>
 	</properties>
 
 	<dependencies>
@@ -65,9 +65,14 @@
     		<version>1.18.8</version>
     		<scope>provided</scope>
 		</dependency>
+        <dependency>
+        	<groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>3.6.1.1688</version>
+        </dependency>
 	
 	</dependencies>
-
+	
 	<build>
         <plugins>
             <plugin>
@@ -75,6 +80,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
+            	<groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
             </plugin>
@@ -82,16 +88,22 @@
             <plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.2</version>
-				
+				<version>0.8.5</version>
+				<configuration>
+                	<excludes>
+                    	<exclude>com/bagic/Channelservices/ExcludedLegacyClass.*</exclude>
+                    	<exclude>${jcoco-exclusion.pattern}</exclude>
+                    </excludes>
+                </configuration>
 				<executions>
 					<execution>
+						<id>jacoco-initialize</id>
 						<goals>
 							<goal>prepare-agent</goal>
-						</goals>
+						</goals>						
 					</execution>
 					<execution>
-						<id>report</id>
+						<id>jacoco-site</id>
 						<!-- <phase>test</phase> -->
 						<goals>
 							<goal>report</goal>
@@ -105,13 +117,13 @@
             			<configuration>
                 			<rules>
                     			<rule implementation="org.jacoco.maven.RuleConfiguration">
-                        			<excludes>
-                        				<!-- <exclude>**/*com.bagic.Channelservices.ExcludedLegacyClass.class</exclude> -->
+                        			<!-- <excludes>
+                        				<exclude>**/*com.bagic.Channelservices.ExcludedLegacyClass.class</exclude>
                         				<exclude>com.bagic.Channelservices.ExcludedLegacyClass</exclude>
-                        				<exclude>${jcoco-exclusion.pattern}</exclude>
+                        				<exclude>com.bagic.Channelservices.legacy.controller.**</exclude>
                         			</excludes>
-                        			<!-- <element>PACKAGE</element> -->
-                        			<element>CLASS</element>
+                        			<element>PACKAGE</element>
+                        			<element>CLASS</element> -->
                         			<limits>
                             			<limit implementation="org.jacoco.report.check.Limit">
                                 			<counter>LINE</counter>
@@ -119,17 +131,38 @@
                                 			<!-- <counter>CLASS</counter> -->
                                 			<value>COVEREDRATIO</value>
                                 			<!-- <value>MISSEDCOUNT</value> -->
-                                			<minimum>0.80</minimum>
+                                			<minimum>0.90</minimum>
                             			</limit>
                         			</limits>
                     			</rule>
                 			</rules>
             			</configuration>
-        			</execution>
-
+        			</execution>					
 				</executions>
 			</plugin>
         </plugins>
     </build>
+    
+	<profiles>
+		<profile>
+			<id>sonar</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<sonar.host.url>http://localhost:9000</sonar.host.url>
+				<sonar.projectKey>com.bagic:Channel-services</sonar.projectKey>
+				<sonar.login>9835e08d0f6667ed980ecee41eb71eee5f47f929</sonar.login>
+				<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+				<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+				<sonar.coverage.jacoco.xmlReportPaths>/target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+				<sonar.language>java</sonar.language>
+				<!-- classes needs to be excluded again in sonar tag. And full path from src/main/java .. needs to be given -->
+				<sonar.coverage.exclusions>**/com/bagic/Channelservices/legacy/controller/**/*,**/com/bagic/Channelservices/ExcludedLegacyClass.*</sonar.coverage.exclusions>
+				<jacoco.version>0.8.5</jacoco.version>
+			</properties>
+		</profile>
+	</profiles>
+    
 
 </project>

@@ -25,6 +25,7 @@ public class TravelController {
 	}
 
 	public String demoMethod(String demo) {
+		System.out.println("Hi this line is to check Sonarway rule java:S106");
 		return tbl.demoMethod(demo) ;
 	}
 
