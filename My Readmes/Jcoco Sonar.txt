@@ -1,0 +1,52 @@
+					<execution>
+            			<id>default-check</id>
+            			<goals>
+                			<goal>check</goal>
+            			</goals>
+            			<configuration>
+                			<rules>
+                    			<rule implementation="org.jacoco.maven.RuleConfiguration">
+                        			<excludes>
+                        				<!-- <exclude>**/*com.bagic.Channelservices.ExcludedLegacyClass.class</exclude> -->
+                        				<exclude>com.bagic.Channelservices.ExcludedLegacyClass</exclude>
+                        				<exclude>${jcoco-exclusion.pattern}</exclude>
+                        			</excludes>
+                        			<!-- <element>PACKAGE</element> -->
+                        			<element>CLASS</element>
+                        			<limits>
+                            			<limit implementation="org.jacoco.report.check.Limit">
+                                			<counter>LINE</counter>
+                                			<!-- <counter>COMPLEXITY</counter> -->
+                                			<!-- <counter>CLASS</counter> -->
+                                			<value>COVEREDRATIO</value>
+                                			<!-- <value>MISSEDCOUNT</value> -->
+                                			<minimum>0.0</minimum>
+                            			</limit>
+                        			</limits>
+                    			</rule>
+                			</rules>
+            			</configuration>
+        			</execution>
+
+
+
+==================================================
+
+
+java:S106
+localSTS: 9835e08d0f6667ed980ecee41eb71eee5f47f929
+
+mvn sonar:sonar -Dsonar.projectKey=com.bagic:Channel-services -Dsonar.host.url=http://localhost:9000 -Dsonar.login=9835e08d0f6667ed980ecee41eb71eee5f47f929
+
+==================================================
+
+The values of the exclude fields should be class paths (not package names) of the compiled classes relative to the directory target/classes/ using the standard wildcard syntax
+
+*   Match zero or more characters
+**  Match zero or more directories
+?   Match a single character
+
+=================================================
+<configuration><version>11</version></configuration>
+
+sonar.sources = src
